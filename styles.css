@@ -1,0 +1,355 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #5D4037;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
+}
+/* Modal Inicial */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #D7CCC8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 20; /* Acima do fundo */
+}
+.fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5D4037; /* Cor de fundo sólida */
+    z-index: 15; /* Abaixo da modal, acima do conteúdo */
+}
+.modal button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #8D6E63;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal button:hover {
+    background-color: #6D4C41;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Container para a chuva de corações */
+#chuva-de-coracoes-container {
+    position: fixed; /* Cobrirá toda a janela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite interações com elementos abaixo */
+    z-index: 30; /* Garante que fique atrás do conteúdo principal */
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* ... (seu CSS restante) */
+
+/* Estilos para o container do coração cadeado (mantém a classe) */
+.heart-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.heart-line {
+    width: 100%; /* Ocupa toda a largura do container */
+    display: flex;
+    justify-content: center; /* Centraliza o coração horizontalmente */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do coração */
+}
+#coracao-cadeado {
+    width: 100px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 24px;
+    color: #3E2723;
+    margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+}
+
+.description {
+    font-size: 16px;
+    color: #5D4037;
+    margin-bottom: 20px; /* Adiciona espaço abaixo da descrição */
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Player de Música */
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #EFEBE9;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    max-width: 300px;
+    margin-bottom: 20px; /* Adiciona espaço abaixo do player */
+    z-index: 10;
+}
+
+.player img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.music-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.music-info h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #3E2723;
+}
+
+.progress-container {
+    background: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 15px;
+    height: 5px;
+    width: 100%;
+}
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #D7CCC8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro do container */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens filhos horizontalmente */
+    z-index: 1;
+}
+
+
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.progress {
+    background-color: #8D6E63;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #5D4037;
+}
+
+.time-container span {
+    margin: 0 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.controls button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.controls i {
+    font-size: 28px;
+    color: #5D4037;
+}
+
+/* Coração com Senha */
+.heart-container {
+    text-align: center;
+    z-index: 15;
+    pointer-events: auto;
+}
+#coracao-cadeado {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* Modal da Senha */
+#modal-senha {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF3E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000; /* Garante que a modal fique acima de outros elementos */
+}
+
+#modal-senha input[type="password"] {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #8D6E63;
+    border-radius: 5px;
+}
+
+#modal-senha button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #8D6E63;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#mensagem-senha {
+    margin-top: 10px;
+    color: green;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#modal-mensagem-final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF3E0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: none;
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 1000; /* Garante que a modal fique acima de outros elementos */
+}
+
+#mensagem-final {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    white-space: pre-line;
+}
+
+#modal-mensagem-final img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.controls i::before {
+    font-family: 'boxicons' !important;
+    font-size: 28px;
+    color: #5D4037;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.bx-caret-right::before {
+    content: "\e930";
+}
+
+.bx-pause::before {
+    content: "\e91f";
+}
+
+.bx-skip-previous::before {
+    content: "\e942";
+}
+
+.bx-skip-next::before {
+    content: "\e941";
+}
+
+/* Estilos para a modal surpresa */
+#modal-surpresa {
+    background: #F8F0E3;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000; /* Garante que a modal fique acima de outros elementos */
+}
+
+#texto-surpresa {
+    font-size: 1.5em;
+    color: #6D4C41;
+    margin-bottom: 20px;
+}
+
+#foto-surpresa {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+#musica-surpresa {
+    width: 100%;
+}
